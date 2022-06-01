@@ -19,31 +19,11 @@ Clients use JSESSIONID over secure cookie with CSRF token in header (against XSR
 * Java 8
 * Spring Boot/MVC/Security
 * Lombok
-* Commons Lang/Collections
 * JUnit + Spring Boot Test
-* Pitest
 * Thymeleaf
-* Tomcat 8
 
 # Tests 
-### 100% line coverage and 97% mutation coverage
-Only service layer was covered by JUnit tests using Spring Boot Test library, since web layer is a kind of dispatcher to service layer business logic. 
-Line coverage and mutation coverage were verified by PiTest. 
-To check PiTest reports - you need to run at root project folder 
-
-mvn org.pitest:pitest-maven:mutationCoverage 
-
-After running all the tests and performing all the mutations, you need to open /service/target/pit-reports/datetimestamp/index.html
-
-# JavaDocs
-Code is documented with in-depth details. You can pass through the classes to follow the flow along with reading comments
-
-# Users
-There are 2 users, who are the players:
-* south/password1
-* north/password2
-
-Take a look at SpringSecurityConfig class to find out how they are defined
+Included Integration tests for the backend.
 
 # How to build?
 mvn clean install
@@ -58,7 +38,7 @@ Due to limited time, the game was implemented with bare minimum requirements.
 Below is the list of further improvements.
 
 ## Security
-
+* Login using Social accounts.
 
 ## UI
 * Thymleaf full capabilites can be utilized for templating and spring security implementation
@@ -69,9 +49,4 @@ Below is the list of further improvements.
 * extend user entities and keep them in DB for further usage
 
 ## Game Design
-* Implement http session
-
-## Misc
-* implement exception dictionary with mapping exception-to-message-shown-to-user
-* introduce resource management system to support i18n, push locales files to UI to show appropriately 
-* implement tests for web layer. It was skipped since web layer is a kind of dispatcher to service layer.
+* Implement http session for online multiplayer.
